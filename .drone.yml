@@ -1,0 +1,20 @@
+pipeline:
+  build:
+    image: spritsail/docker-build
+    volumes: [ '/var/run/docker.sock:/var/run/docker.sock' ]
+    repo: nzbget-dev
+
+  # No test step, the upstream should sort that. ffmpeg should work if the build finishes.
+
+    publish:
+    image: spritsail/docker-publish
+    volumes: [ '/var/run/docker.sock:/var/run/docker.sock' ]
+    secrets: [ docker_username, docker_password, microbadger_token ]
+    when: { branch: [ master ], event: [ push, tag, deployment ] }
+    from: nzbget-dev
+    repo: adamant/nzbget
+
+  notify:
+    image: spritsail/notify
+    when: { status: [ success, failure ] }
+    secrets: [ webhook_url, notify_token ]

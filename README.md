@@ -3,7 +3,7 @@
 [drone]: https://drone.adamant.io/spritsail/nzbget
 [mbdg]: https://microbadger.com/images/adamant/nzbget
 
-# [Spritsail/NZBGet][hub]
+# [Adam-Ant/NZBGet][hub]
 
 [![Layers](https://images.microbadger.com/badges/image/adamant/nzbget.svg)][mbdg]
 [![Latest Version](https://images.microbadger.com/badges/version/adamant/nzbget.svg)][hub]

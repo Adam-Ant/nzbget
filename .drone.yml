@@ -5,8 +5,7 @@ pipeline:
     repo: nzbget-dev
 
   # No test step, the upstream should sort that. ffmpeg should work if the build finishes.
-
-    publish:
+  publish:
     image: spritsail/docker-publish
     volumes: [ '/var/run/docker.sock:/var/run/docker.sock' ]
     secrets: [ docker_username, docker_password, microbadger_token ]
